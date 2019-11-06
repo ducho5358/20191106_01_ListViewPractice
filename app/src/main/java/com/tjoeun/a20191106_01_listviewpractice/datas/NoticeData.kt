@@ -7,6 +7,6 @@ class NoticeData(title:String, content:String, writeDate:String) {
     var date = writeDate
 
 //    init{
-//
+//  Log.d(제목)
 //    }
 }
