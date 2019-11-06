@@ -2,12 +2,15 @@ package com.tjoeun.a20191106_01_listviewpractice
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.tjoeun.a20191106_01_listviewpractice.adapters.NoticeAdapter
 import com.tjoeun.a20191106_01_listviewpractice.datas.NoticeData
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
 
     var noticeList = ArrayList<NoticeData>()
+    var noticeAdapter:NoticeAdapter? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,6 +18,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         addNotices()
+
+        noticeAdapter = NoticeAdapter(this, noticeList)
+        noticeListView.adapter = noticeAdapter
 
 
     }
